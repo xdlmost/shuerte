@@ -1,0 +1,17 @@
+<!--components/square/square.wxml-->
+<view class="main">
+<text class="main-t">{{timer_str}}</text>
+
+</view>
+<view class ="square-container" >
+  <view class ="square" bindtap="ToStart" wx:if="{{isStarted=='noStart'}}">
+    <view class='stepText' style="font-size:{{font}};opacity:{{opacity}}">{{stepText}}</view>
+  </view>
+  <view wx:else class ="square" style=" grid-template-columns: repeat({{jie}}, {{1/jie*100}}%);grid-template-rows:repeat({{jie}}, {{1/jie*100}}%);" id="container">
+    <block wx:for="{{tlist}}" wx:key="item"  >
+      <view bindtap="ItemTap" class="square-item" style="  line-height: {{700/jie}}rpx; background-image: {{item.color}}" data-value="{{item.index}}">
+        {{item.value}}
+      </view>
+    </block>
+  </view>
+</view>

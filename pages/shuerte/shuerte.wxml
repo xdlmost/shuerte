@@ -1,0 +1,2 @@
+<!--index.wxml-->
+<square jie="7" bind:Win="OnWin" bind:Fail="OnFail"/>
